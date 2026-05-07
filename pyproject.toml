@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-tasks-pde"
+version = "0.1.0"
+description = "Reusable solvers for educational PDE tasks."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0",
+    "matplotlib",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+run-cauchy = "cauchy_solver.app:cli"
+run-advection-diffusion = "advection_diffusion_solver.app:cli"
+run-linear-advection = "linear_advection_solver.app:cli"
+run-numerical-viscosity = "numerical_viscosity_solver.app:cli"
+run-lax-wendroff = "lax_wendroff_analysis.app:cli"
+run-vector-transport = "vector_transport_solver.app:cli"
+run-implicit-heat = "implicit_heat_solver.app:cli"
+run-burgers-diffusion = "burgers_diffusion_solver.app:cli"
+run-sigma-heat = "sigma_heat_solver.app:cli"
+run-recalculation-heat = "recalculation_heat_solver.app:cli"
+run-wave-task12 = "wave_task12_solver.app:cli"
+run-wave-task13 = "wave_task13_solver.app:cli"
+run-coupled-parabolic = "coupled_parabolic_solver.app:cli"
